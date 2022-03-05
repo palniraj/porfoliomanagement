@@ -3,19 +3,14 @@ import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
+// const name = ['buy', 'sell'];
 
-const options = [
-  {
-    label: "Buy",
-    value: "buy",
-  },
-  {
-    label: "Sell",
-    value: "sell",
-  },
-];
+// const res = names.find(findBuy);
+// function findBuy(item){
+//   return item === 'Buy';
+// }
 
-export default class EditStock extends Component {
+export default class ShowStock extends Component {
   constructor(props) {
     super(props);
 
