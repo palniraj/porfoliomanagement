@@ -146,14 +146,15 @@ export default class ShowStock extends Component {
             <label>Current Value: {this.state.current_value}</label>
           </div>
           <div className="form-group">
-            <label>Overall Profit/Loss: </label>
+            <label>Overall Profit/Loss: {(this.state.current_value* this.state.quantity) - (this.state.amount* this.state.quantity)} </label>
           </div>
-          <div className="form-group">
-            <label>Sold Value: </label>
-          </div>
-          <div className="form-group">
-            <label>Total Investment: </label>
-          </div>
+         {this.state.transaction_type==="sell"&&( <div className="form-group">
+            <label>Sold Value: {this.state.amount* this.state.quantity} </label>
+          </div>)}
+         {this.state.transaction_type==="buy"&&( <div className="form-group">
+            <label>Total Investment: {this.state.amount* this.state.quantity} </label>
+          </div>)}
+
           
           <div className="form-group">
             <label>

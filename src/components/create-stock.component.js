@@ -27,10 +27,10 @@ export default class CreateStock extends Component {
 
     this.state = {
       username: '',
-      transaction_type: '',
+      transaction_type: 'buy',
       quantity: 0,
       amount: 0,
-      // current_value: 0,
+      current_value: 0,
       transaction_date: new Date(),
       users: []
     }
@@ -78,6 +78,7 @@ export default class CreateStock extends Component {
   }
 
   onChangeTransactionType(e) {
+    // console.log(e.target.value);
     this.setState({
       transaction_type: e.target.value
     })

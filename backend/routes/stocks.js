@@ -11,7 +11,7 @@ router.route('/add').post((req, res) => {
   const username = req.body.username;
   const quantity = Number(req.body.quantity);
   const amount = Number(req.body.amount);
-  const current_value = Number(req.body.current_value);
+  const current_value = req.body.current_value;
   const transaction_type = req.body.transaction_type;
   const transaction_date = Date.parse(req.body.transaction_date);
 
