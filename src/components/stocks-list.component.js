@@ -49,29 +49,24 @@ export default class StocksList extends Component {
           }
         });
 
-        const cp = buy.reduce(
-          (previousValue, currentValue) =>
-            previousValue.amount * previousValue.quantity +
-            currentValue.amount * currentValue.quantity
+        const cp = response.data.reduce(
+          (previousValue, currentValue) =>   previousValue.amount * previousValue.quantity + currentValue.amount * currentValue.quantity
         );
         
-        const sp = sell.reduce(
-          (previousValue, currentValue) =>
-          previousValue.amount * previousValue.quantity +
-          currentValue.amount * currentValue.quantity
+        const sp = response.data.reduce(
+          (previousValue, currentValue) =>  previousValue.current_value * previousValue.quantity +  currentValue.current_value * currentValue.quantity
           );
+
+          console.log(sp);
 
         const profitloss = sp - cp;
 
         const totalunits = response.data.reduce(
-          (previousValue, currentValue) =>
-            previousValue.quantity + currentValue.quantity
+          (previousValue, currentValue) =>  previousValue.quantity + currentValue.quantity
         );
 
         const totalcurrent = response.data.reduce(
-          (previousValue, currentValue) =>
-            previousValue.current_value * previousValue.quantity +
-            currentValue.current_value * currentValue.quantity
+          (previousValue, currentValue) =>   previousValue.current_value * previousValue.quantity + currentValue.current_value * currentValue.quantity
         );
 
         // console.log((sp-cp)/cp*100);
@@ -134,9 +129,9 @@ export default class StocksList extends Component {
               <th></th>
               <th>Total Profit/Loss: {this.state.profitloss} </th>
               <th>Total Units: {this.state.totalunits}</th>
-              {/* <th>Total Investment: {this.state.cp}</th>
+              <th>Total Investment: {this.state.cp}</th>
               <th>Sold Value: {this.state.sp}</th>
-              <th>Current Value: {this.state.totalcurrent} </th> */}
+              <th>Current Value: {this.state.totalcurrent} </th>
               <th></th>
             </tr>
           </tfoot>
