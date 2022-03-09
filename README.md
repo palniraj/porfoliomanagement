@@ -56,4 +56,9 @@ http://localhost:5000/stocks/add
 
 ## Project overview
 
+<img src="./demo/demo1.png"  />
+<img src="./demo/demo2.png"  />
+<img src="./demo/demo3.png"  />
+<img src="./demo/demo4.png"  />
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
